@@ -16,6 +16,7 @@ var buttonStart = document.getElementById("b_start");
 var color_viz = document.getElementById("color_viz");
 var file_type, file_url, file_name;
 
+
 var _VIDEO, _CANVAS, _CANVAS_CTX;
 var video_thumb_url;
 var jumpSecondSlider = document.getElementById("jumpSecondSlider");

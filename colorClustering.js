@@ -12,6 +12,10 @@ let fileName
 let fileCollection = []
 let imgURLCollection = []
 
+let noK
+let default_noK = 4
+let sK = document.getElementById("noK")
+
 let dropArea
 var dropError = false
 var dropped = false
@@ -20,8 +24,7 @@ var counter = 0
 var clicked = false
 var playing = false
 var p
-let noK = 4
-// let noK = document.getElementById("noK").value
+
 let jumpSecond = 30  // THIS ACCUMULATES THE INCREMENT FOR i AND SETS A TIME JUMP ON THE VIDEO BY A GIVEN VALUE IN SECONDS! Default: 30 seconds
 let wait = false
 let timeInit = 1
@@ -54,7 +57,6 @@ jumpSecondSlider.addEventListener('input',changeJumpSecond, false);
 var thumb_frames = document.getElementById('thumbs_frames');
 
 function setup(){
-  alert(noK);
   playButton = createButton("play");
   playButton.class("button");
   playButton.id('play_button');
@@ -62,7 +64,8 @@ function setup(){
   playButton.style('display','inline-flex');
   playButton.mousePressed(tooglePlay);
   playButton.hide();
-
+  noK = default_noK
+  sK.value = noK
 
 }
 
@@ -71,6 +74,7 @@ function draw(){
   if (wait == true){
     imLoading();
   }
+  noK = sK.options[sK.selectedIndex].value;
 
 }
 
